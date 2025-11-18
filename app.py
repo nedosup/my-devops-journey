@@ -7,7 +7,5 @@ def hello_world():
 
 @app.route('/test') # Інший URL-шлях
 def test_page():
-    return 'Це тестова сторінка. Все працює!'
+    return 'Версія 2.0: Реліз успішний!'
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
