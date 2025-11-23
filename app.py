@@ -20,6 +20,7 @@ def get_db_connection():
     )
     return conn
 
+
 @app.route('/')
 def hello():
     return 'Головна сторінка (HOT RELOAD ПРАЦЮЄ!)'
@@ -38,4 +39,3 @@ def db_test():
         return f'Успішне підключення! Версія бази: {db_version}'
     except Exception as e:
         return f'Помилка підключення: {str(e)}'
-
