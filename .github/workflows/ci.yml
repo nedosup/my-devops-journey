@@ -26,4 +26,4 @@ jobs:
           # --count: рахувати помилки
           # --show-source: показувати саме той рядок коду, де помилка
           # --statistics: показати звіт 
-          flake8 . --count --showsource --statistics
+          flake8 . --count --show-source --statistics

@@ -37,3 +37,8 @@ def db_test():
     except Exception as e:
         return f'Помилка підключення: {str(e)}'
 
+
+
+
+x = 1
+import os
