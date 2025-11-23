@@ -1,0 +1,39 @@
+services:
+  my-app:
+    build: .
+    container_name: flask-backend
+    ports:
+      - "80:5000"
+    restart: always
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=supersecretpassword
+      # 1. Вмикаємо режим налагодження Flask.
+      # Це змушує Python автоматично перезавантажувати сервер,
+      # якщо він бачить, що файл коду змінився.
+      - FLASK_DEBUG=1
+    volumes:
+      # 2. Bind Mount (Магія тут)
+      # [Твоя папка .] : [Папка в контейнері /app]
+      # Тепер /app в контейнері - це пряме дзеркало твоєї папки.
+      - .:/app
+  db:
+    image: postgres:15-alpine
+    container_name: postgres-db
+    restart: always
+    environment:
+      # Налаштування для створення бази (це змінні самого образу Postgres)
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=supersecretpassword
+      - POSTGRES_DB=postgres
+    volumes:
+      # Зберігаємо дані! (Назва тому : Шлях всередині контейнера)
+      - postgres_data:/var/lib/postgresql/data
+
+# Описуємо том (сховище)
+volumes:
+  postgres_data:
