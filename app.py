@@ -10,6 +10,7 @@ DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 
+
 def get_db_connection():
     conn = psycopg2.connect(
         host=DB_HOST,
@@ -22,6 +23,7 @@ def get_db_connection():
 @app.route('/')
 def hello():
     return 'Головна сторінка (HOT RELOAD ПРАЦЮЄ!)'
+
 
 @app.route('/db-test')
 def db_test():
@@ -37,8 +39,3 @@ def db_test():
     except Exception as e:
         return f'Помилка підключення: {str(e)}'
 
-
-
-
-x = 1
-import os
