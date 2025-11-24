@@ -27,3 +27,7 @@ jobs:
           # --show-source: показувати саме той рядок коду, де помилка
           # --statistics: показати звіт 
           flake8 . --count --show-source --statistics
+
+      - name: Run Unit Tests with pytest
+        run: |
+          pytest -v
