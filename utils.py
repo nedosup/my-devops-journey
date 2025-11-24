@@ -2,6 +2,7 @@ def get_square(num):
     """Повертає квадрат числа."""
     return num * num
 
+
 def is_prime(num):
     """Перевіряє, чи є число простим (ділиться тільки на 1 і на себе)."""
     if num < 2:
@@ -10,6 +11,7 @@ def is_prime(num):
         if num % i == 0:
             return False
     return True
+
 
 def get_greeting(name):
     """Повертає привітання."""
