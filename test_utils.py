@@ -1,4 +1,3 @@
-import pytest
 from utils import get_square, is_prime, get_greeting
 
 
